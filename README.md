@@ -29,6 +29,10 @@ Para esta primera etapa se acordo realizar las transformaciones de los siguiente
 
 Este proceso entregaria dos archivos transformados, los cuales serian utilizados para desarrollar las consultas de a API, en una primera etapa en un jupiter notebook, usando Colab y con todos los resultados OK, se pasarian a probar desde VSC en un programa llamado main.py, ademas se usaria fastAPI de forma local para certificar que el API esta funcionando correctamente.
 
+**CODIGO ETL**
+Aqui dejamos el codigo ETL realizado:
+https://github.com/RickDev31/PI_01_MLOPs_DATA08/blob/main/ETLMLOps.ipynb
+
 <br/>
 
 
@@ -45,6 +49,15 @@ En trabajo en conjunto, se propusieron elaborar las siguientes consultas de la A
 
 + Actor que más se repite según plataforma y año. (La función debe llamarse get_actor(platform, year))
 
+**Codigo Consulta API**
+Aqui dejamos el codigo de las consultas desarrolladas y probadas:
+https://github.com/RickDev31/PI_01_MLOPs_DATA08/blob/main/DesarrolloAPIMLOps.ipynb
+
+
+**Codigo API**
+Aqui dejamos el codigo de la API probadas con FastAPI:
+https://github.com/RickDev31/PI_01_MLOPs_DATA08/blob/main/main.py
+
 <br/>
 
 ## DEPLOYMENT
@@ -58,12 +71,21 @@ Si bien entre el ETL hasta el EDA, se consume entre un 70% a 80% del tiempo del 
 
 Esta etapa culmina con la generacion de dos archivos listos para entrenar a nuestro modelo de machine learning. Procediendo a la entrega de estos dos archivos al cliente via DRIVE.
 
+
+**Codigo Consulta API**
+Aqui dejamos el codigo de las consultas desarrolladas y probadas:
+https://github.com/RickDev31/PI_01_MLOPs_DATA08/blob/main/EDAMLOps.ipynb
+
 <br/>
 
 ## SISTEMA DE RECOMENDACION - MODELO MACHINE LEARNING
 
 
 Una vez que toda la data es consumible por la API ya lista para consumir para los departamentos de Analytics y de Machine Learning, y nuestro EDA bien realizado entendiendo bien los datos a los que tenemos acceso, es hora de entrenar nuestro modelo de machine learning para armar un sistema de recomendación de películas para usuarios, donde dado un id de usuario y una película, nos diga si la recomienda o no para dicho usuario. De ser posible, este sistema de recomendación debe ser deployado para tener una interfaz gráfica amigable para ser utilizada, utilizando Gradio para su deployment o bien con alguna solución como Streamlit o algo similar en local (tener el deployment del sistema de recomendación o una interfaz gráfica es un plus al proyecto).
+
+**Codigo modelo machine learning - sistema de recomendacion**
+Aqui dejamos el codigo del modelo entrenado de machine learning:
+https://github.com/RickDev31/PI_01_MLOPs_DATA08/blob/main/DesarrolloSISRECMLOps.ipynb
 
 <br/>
 
@@ -75,5 +97,5 @@ Una vez que toda la data es consumible por la API ya lista para consumir para lo
 
 
 ## ENTREGABLES FINALES:
-
+https://github.com/RickDev31/PI_01_MLOPs_DATA08/tree/main/datasetsML
 
