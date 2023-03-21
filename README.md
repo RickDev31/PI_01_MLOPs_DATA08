@@ -1,44 +1,21 @@
-<p align=center><img src=https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png><p>
+# <h1 align=center> **BOOTCAMP DATA SCIENCE - PROYECTO INDIVIDUAL** </h1>
 
-# <h1 align=center> **PROYECTO INDIVIDUAL Nº1** </h1>
+<br/>
 
-# <h1 align=center>**`Machine Learning Operations (MLOps)`**</h1>
+## **Del caso a solucionar**
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/67664604/217914153-1eb00e25-ac08-4dfa-aaf8-53c09038f082.png"  height=300>
-</p>
+Una empresa relacionada al mundo del entretenimiento via streaming, desea mejorar su propuesta de valor, para ello nos acaba de contratar a nuestra consultora para desarrollar un Sistema de Recomendacion con Machine Learning.
 
-¡Bienvenidos al primer proyecto individual de la etapa de labs! En esta ocasión, deberán hacer un trabajo situándose en el rol de un ***MLOps Engineer***.  
+Se llevaron a cabo las diferentes sesiones para entender que querian realmente, poder entrenar al modelo y asi poder resolver las consultas al modelo de prediccion 
 
-<hr>  
+El caso fue que al entregarnos la data, nuestro data Engineer se percato que la informacion no estaba totalmente limpia, por lo que habia que curar la data y dejar los archivos listos para la fase de creacion de la API, hacer el EDA y finalmente entrenar el modelo.
 
-## **Descripción del problema (Contexto y rol a desarrollar)**
+De entre lo mas relevante y en reunion con el cliente se propusieron hacer las siguiente transformaciones, siendo acompañados de un product owner de parte de cliente, para hacer las consultas puntuales campo por campo del negocio.
 
-## Contexto
+<br/>
 
-Tienes tu modelo de recomendación entrenado dando unas buenas métricas :smirk:, y ahora, cómo lo llevas al mundo real? :eyes:
-
-El ciclo de vida de un proyecto de Machine Learning debe contemplar desde el tratamiento y recolección de los datos (Data Engineer stuff) hasta el entrenamiento y mantenimiento del modelo de ML según llegan nuevos datos.
-
-
-## Rol a desarrollar
-
-Empezaste a trabajar como **`Data Scientist`** en una start-up que provee servicios de agregación de plataformas de streaming. El mundo es bello y vas a crear tu primer modelo de ML que soluciona un problema de negocio: un sistema de recomendación que aún no ha sido puesto en marcha! 
-
-Vas a sus datos y te das cuenta que la madurez de los mismos es poca (ok, es nula :sob:): Datos sin transformar, no hay procesos automatizados para la actualización de nuevas películas o series, entre otras cosas….  haciendo tu trabajo imposible :weary:. 
-
-Debes empezar desde 0, haciendo un trabajo rápido de **`Data Engineer`** y tener un **`MVP`** (_Minimum Viable Product_) para la próxima semana! Tu cabeza va a explotar 🤯, pero al menos sabes cual es, conceptualmente, el camino que debes de seguir :exclamation:. Así que te espantas los miedos y te pones manos a la obra :muscle:
-
-<p align="center">
-<img src="https://github.com/HX-PRomero/PI_ML_OPS/blob/main/src/DiagramaConceptualDelFlujoDeProcesos.png"  height=500>
-</p>
-
-<sub> Nota que aqui se reflejan procesos no herramientas tecnologicas. Has el ejercicio de entender cual herramienta del stack corresponde a cual parte del proceso<sub/>
-
-## **Propuesta de trabajo (requerimientos de aprobación)**
-
-**`Transformaciones`**:  Para este MVP no necesitas perfección, ¡necesitas rapidez! ⏩ Vas a hacer estas, ***y solo estas***, transformaciones a los datos:
-
+## TRANSFORMACIONES A REALIZAR
+Para esta primera etapa se acordo realizar las transformaciones de los siguiente campos, se detalla: 
 
 + Generar campo **`id`**: Cada id se compondrá de la primera letra del nombre de la plataforma, seguido del show_id ya presente en los datasets (ejemplo para títulos de Amazon = **`as123`**)
 
@@ -50,9 +27,15 @@ Debes empezar desde 0, haciendo un trabajo rápido de **`Data Engineer`** y tene
 
 + El campo ***duration*** debe convertirse en dos campos: **`duration_int`** y **`duration_type`**. El primero será un integer y el segundo un string indicando la unidad de medición de duración: min (minutos) o season (temporadas)
 
+Este proceso entregaria dos archivos transformados, los cuales serian utilizados para desarrollar las consultas de a API, en una primera etapa en un jupiter notebook, usando Colab y con todos los resultados OK, se pasarian a probar desde VSC en un programa llamado main.py, ademas se usaria fastAPI de forma local para certificar que el API esta funcionando correctamente.
+
 <br/>
 
-**`Desarrollo API`**:   Propones disponibilizar los datos de la empresa usando el framework ***FastAPI***. Las consultas que propones son las siguientes:
+
+
+## DESARROLLO DE LA API
+En trabajo en conjunto, se propusieron elaborar las siguientes consultas de la API, la cual detallamos:
+
 
 + Película con mayor duración con filtros opcionales de AÑO, PLATAFORMA Y TIPO DE DURACIÓN. (la función debe llamarse get_max_duration(year, platform, duration_type))
 
@@ -62,66 +45,35 @@ Debes empezar desde 0, haciendo un trabajo rápido de **`Data Engineer`** y tene
 
 + Actor que más se repite según plataforma y año. (La función debe llamarse get_actor(platform, year))
 
+<br/>
+
+## DEPLOYMENT
+Para esta fase se propuso usar RENDER
 
 <br/>
 
+## EDA - ANALISIS EXPLORATORIO DE DATOS
 
-**`Deployment`**: Conoces sobre [Render](https://render.com/docs/free#free-web-services) y tienes un [tutorial de Render](https://github.com/HX-FNegrete/render-fastapi-tutorial) que te hace la vida mas facil :smile: . Tambien podrias usar [Railway](https://railway.app/), pero ten en cuenta que con este si necesitas dockerizacion.
+Si bien entre el ETL hasta el EDA, se consume entre un 70% a 80% del tiempo del proyecto, es importante hacerlo porque se aprende de los datos, del como estan, que se pueden mejorar y en algunos casos proponer soluciones para que los datos sean grabados de forma correcta y asi no invertir tanto tiempo en la limpieza de las mismas. Tambien se busca entender como estan relacionados toda la informacion, posiblemente corregir algunos errores que se encuentren a mas detalle y finalmente tener la data curada. Finalmente dar unas conclusiones.
+
+Esta etapa culmina con la generacion de dos archivos listos para entrenar a nuestro modelo de machine learning. Procediendo a la entrega de estos dos archivos al cliente via DRIVE.
 
 <br/>
 
-**`Análisis exploratorio de los datos`**: _(Exploratory Data Analysis-EDA)_
+## SISTEMA DE RECOMENDACION - MODELO MACHINE LEARNING
 
-Ya los datos están limpios, ahora es tiempo de investigar las relaciones que hay entre las variables de los datasets, ver si hay outliers o anomalías (que no tienen que ser errores necesariamente :eyes: ), y ver si hay algún patrón interesante que valga la pena explorar en un análisis posterior.  Sabes que puedes apoyarte en librerías como _pandas profiling, sweetviz, autoviz_, entre otros y sacar de allí tus conclusiones 😉
-
-**`Sistema de recomendación`**: 
 
 Una vez que toda la data es consumible por la API ya lista para consumir para los departamentos de Analytics y de Machine Learning, y nuestro EDA bien realizado entendiendo bien los datos a los que tenemos acceso, es hora de entrenar nuestro modelo de machine learning para armar un sistema de recomendación de películas para usuarios, donde dado un id de usuario y una película, nos diga si la recomienda o no para dicho usuario. De ser posible, este sistema de recomendación debe ser deployado para tener una interfaz gráfica amigable para ser utilizada, utilizando Gradio para su deployment o bien con alguna solución como Streamlit o algo similar en local (tener el deployment del sistema de recomendación o una interfaz gráfica es un plus al proyecto).
 
 <br/>
 
-**`Video`**: Necesitas que al equipo le quede claro que tus herramientas funcionan realmente! Haces un video mostrando el resultado de las consultas propuestas y de tu modelo de ML entrenado!
 
-<sub> **Spoiler**: El video NO DEBE durar mas de ***7 minutos*** y DEBE mostrar las consultas requeridas en funcionamiento desde la API** y una breve explicacion del modelo entrenado para el sistema de recomendacion. <sub/>
+## **Fuente de datos proporcionada por el cliente**
 
++ [Dataset](https://drive.google.com/drive/folders/1b49OVFJpjPPA1noRBBi1hSmMThXmNzxn): archivos originales, con ellos se realizo todo el presente proyecto
 <br/>
 
-## **Criterios de evaluación**
 
-**`Código`**: Prolijidad de código, uso de clases y/o funciones, en caso de ser necesario, código comentado. 
-
-**`Repositorio`**: Nombres de archivo adecuados, uso de carpetas para ordenar los archivos, README.md presentando el proyecto y el trabajo realizado
-
-**`Cumplimiento`** de los requerimientos de aprobación indicados en el apartado `Propuesta de trabajo`
-
-NOTA: Recuerde entregar el link de acceso al video. Puede alojarse en YouTube, Drive o cualquier plataforma de almacenamiento. **Verificar que sea de acceso público**.
-
-<br/>
-Aqui te sintetizamos que es lo que consideramos un MVP aprobatorio, y la diferencia con un producto completo.
+## ENTREGABLES FINALES:
 
 
-<p align="center">
-<img src="https://github.com/HX-PRomero/PI_ML_OPS/blob/main/src/MVP_MLops.png"  height=250>
-</p>
-
-
-## **Fuente de datos**
-
-+ [Dataset](https://drive.google.com/drive/folders/1b49OVFJpjPPA1noRBBi1hSmMThXmNzxn): La carpeta 'ratings' tiene varios archivos con las reseñas de los usuarios, la carpeta raíz tiene un dataset por proveedor de servicios de streaming.
-<br/>
-
-## **Material de apoyo**
-
-En este mismo repositorio podras encontrar algunos [links de ayuda](https://github.com/HX-PRomero/PI_ML_OPS/blob/main/Material%20de%20apoyo.md). Recuerda que no son los unicos recursos que puedes utilizar!
-
-
-  
-<br/>
-
-## **Deadlines importantes**
-
-+ Apertura de formularios de entrega de proyectos: **Lunes 20, 10:00 hs gmt -3**
-
-+ Cierre de formularios de entrega de proyectos: **Martes 21, 16:00hs gmt-3**
-  
-+ Demo: **Martes 21, 16:00hs gmt-3*** 
